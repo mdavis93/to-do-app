@@ -38,9 +38,13 @@ function onReady() {
     newToDoText.value = "";
   });
 
+  // Add an EventListener to the <ul>
   toDoList.addEventListener('click', (e) => {
+    // If we clicked the delete button, the innerText will be "Delete"
     if (e.target.innerText === "Delete") {
+      // Target the grandparent of the button, in order to remove its parent
       e.target.parentNode.parentNode.removeChild(
+        // Remove the button's parent, the <li> element.
         e.target.parentNode
       );
     }
